@@ -16,6 +16,7 @@ Start Tomcat in the container by executing
 ```
 docker exec -it --user root jenkins_demo /bin/bash
 root@<containerID>:/# /opt/tomcat/apache-tomcat-9.0.21/bin/startup.sh
+root@<containerID>:/# rm -r /opt/tomcat/apache-tomcat-9.0.21/webapps/helloworld*   // Clearing any old webapps present
 ```
 
 
