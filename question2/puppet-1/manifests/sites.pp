@@ -28,13 +28,13 @@ tomcat::config::server { 'tomcatB':
   port          => '18080',
 }
 
-tomcat::war { 'hello_world.war':
-  catalina_base => '/opt/tomcat-instances/tomcatA',
-  war_source    => '/opt/tomcat-instances/webapps/hello_world.war',
-}
+#tomcat::war { 'hello_world.war':
+#  catalina_base => '/opt/tomcat-instances/tomcatA',
+#  war_source    => <WAR filepath>,
+#}
 
-tomcat::war { 'hello_world.war':
-  catalina_base => '/opt/tomcat-instances/tomcatA',
-  war_source    => '/opt/tomcat-instances/webapps/hello_world1.war',
-}
+#tomcat::war { 'hello_world.war':
+#  catalina_base => '/opt/tomcat-instances/tomcatA',
+#  war_source    => <WAR filepath>,
+#}
 
