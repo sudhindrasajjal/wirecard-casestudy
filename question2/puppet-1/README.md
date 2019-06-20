@@ -9,7 +9,7 @@ puppet module install puppetlabs-tomcat --version 3.0.0
 ```
 
 
-Then in the puppet master, add the **sites.pp** to your manifests directory (Usually located at /etc/puppet/manifests).
+Then in the puppet master, add the **manifests/sites.pp** to your manifests directory (Usually located at /etc/puppet/manifests).
 
 You can apply the changes on the agent by running (Considering the master has signed the agent's cert previously)
 ```
