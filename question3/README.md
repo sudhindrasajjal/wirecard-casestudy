@@ -19,8 +19,7 @@ root@<containerID>:/# /opt/tomcat/apache-tomcat-9.0.21/bin/startup.sh
 ```
 
 
-Open your web browser and go to  `0.0.0.0:8080`
-Enter the Jenkins credentials provided in the email
+Open your web browser and go to  `0.0.0.0:8080` and enter the Jenkins credentials provided in the email
 
 You can trigger a build for  `demo-build-pipeline`
 
