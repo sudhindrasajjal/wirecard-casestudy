@@ -1,0 +1,20 @@
+pipeline{
+    agent any
+    stages {
+        stage('Build') { //Build the war
+            steps {
+                build job: 'project-build'
+            }
+        }
+        stage('Test') { //Test Stage
+            steps {
+                build job: 'project-test'
+            }
+        }
+        stage('Deploy') { //Deploy the war to tomcat
+            steps {
+                build job: 'project-deploy'
+            }
+        }
+    }
+}
