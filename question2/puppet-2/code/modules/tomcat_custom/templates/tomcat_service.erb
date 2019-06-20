@@ -1,0 +1,15 @@
+[Unit]
+Description='Tomcat <%= @instance_name %>'
+After=network.target
+
+[Service]
+Type=forking
+User=<%= @tomcat_user %>
+LimitNOFILE=<% if @instant['maxopenfiles'] %><%= @instant['maxopenfiles'] %><% else %> 70000 <% end %> 
+ExecStart=<%= @catalina_base %>/bin/startup.sh
+ExecStop=<%= @catalina_base %>/bin/shutdown.sh
+WorkingDirectory=<%= @catalina_base %>
+
+[Install]
+WantedBy=multi-user.target
+

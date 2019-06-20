@@ -1,0 +1,42 @@
+---
+tomcat_version: "8.5.16-1"
+tomcat_custom::package_name: "tomcat8"
+tomcat_config:
+  tomcatA:
+    name: 'tomcatA'
+    server_conf: "tomcat_server_xml.erb"
+    systemd: "true"
+    tomcat_env: "tomcat_env.erb"
+    CATALINA_OPTS: '-server -XX:StringTableSize=1000003 -XX:+UseCompressedOops -XX:+UseCompressedClassPointers -XX:+UseFastAccessorMethods -XX:+OptimizeStringConcat -DAsyncLogger.RingBufferSize=10486 -Djava.awt.headless=true -Djava.awt.headless=true -Djava.net.preferIPv4Stack=true'
+    GC_OPTS: '-XX:+UseG1GC -XX:MaxGCPauseMillis=150'
+    MEM_OPTS: '-Xmx8G -Xms4G -XX:MaxDirectMemorySize=2G'
+    LOG_OPTS: '-XX:ErrorFile=/opt/tomcat-instances/tomcat1/logs/hs_err_`date +"%Y-%m-%d_%H-%M-%S"`_pid_%p.log -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/opt/tomcat-instances/tomcat1/logs/heapdumps/'
+    shutdown_port: 8007
+    connector_port: 8080
+    redirect_port: 8443
+    manager: "present"
+    manager_user: "deployer"
+    manager_passwd: "deploy"
+    connectionTimeout: 2000
+    JAVA_HOME: "/usr/lib/jvm/oracle-java8-jdk-amd64"
+    resolveHosts: "false"
+    RewriteValve: "true"
+  tomcatB:
+    name: 'tomcatB'
+    server_conf: "tomcat_server_xml.erb"
+    systemd: "true"
+    tomcat_env: "tomcat_env.erb"
+    CATALINA_OPTS: '-server -XX:StringTableSize=1000003 -XX:+UseCompressedOops -XX:+UseCompressedClassPointers -XX:+UseFastAccessorMethods -XX:+OptimizeStringConcat -DAsyncLogger.RingBufferSize=10486 -Djava.awt.headless=true -Djava.awt.headless=true -Djava.net.preferIPv4Stack=true'
+    GC_OPTS: '-XX:+UseG1GC -XX:MaxGCPauseMillis=150'
+    MEM_OPTS: '-Xmx2G -Xms1G -XX:MaxDirectMemorySize=512M'
+    LOG_OPTS: '-XX:ErrorFile=/opt/tomcat2/tomcat1/logs/hs_err_`date +"%Y-%m-%d_%H-%M-%S"`_pid_%p.log -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/opt/tomcat-instances/tomcat2/logs/heapdumps/'
+    shutdown_port: 18007
+    connector_port: 18080
+    redirect_port: 18443
+    manager: "present"
+    manager_user: "deployer"
+    manager_passwd: "deploy"
+    connectionTimeout: 2000
+    JAVA_HOME: "/usr/lib/jvm/oracle-java8-jdk-amd64"
+    resolveHosts: "false"
+    RewriteValve: "true"

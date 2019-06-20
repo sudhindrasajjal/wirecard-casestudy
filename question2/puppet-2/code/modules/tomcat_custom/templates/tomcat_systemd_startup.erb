@@ -1,0 +1,5 @@
+#!/bin/bash
+export CATALINA_BASE="<%= @catalina_base %>"
+/usr/share/<%= @tomcat_user %>/bin/startup.sh
+echo "Tomcat <%= @instance_name %> stopped"
+

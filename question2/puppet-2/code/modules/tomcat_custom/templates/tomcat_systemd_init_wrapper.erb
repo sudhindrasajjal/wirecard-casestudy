@@ -1,0 +1,24 @@
+#!/bin/bash
+# /etc/init.d/tomcat_<%= @instance_name %> -- startup script for the Tomcat servlet engine
+#
+# Written by Miquel van Smoorenburg <miquels@cistron.nl>.
+# Modified for Debian GNU/Linux by Ian Murdock <imurdock@gnu.ai.mit.edu>.
+# Modified for Tomcat by Stefan Gybas <sgybas@debian.org>.
+# Modified for Tomcat6 by Thierry Carrez <thierry.carrez@ubuntu.com>.
+# Modified for Tomcat7 by Ernesto Hernandez-Novich <emhn@itverx.com.ve>.
+# Additional improvements by Jason Brittain <jason.brittain@mulesoft.com>.
+#
+### BEGIN INIT INFO
+# Provides:          tomcat_<%= @instance_name %>
+# Required-Start:    $local_fs $remote_fs $network
+# Required-Stop:     $local_fs $remote_fs $network
+# Should-Start:      $named
+# Should-Stop:       $named
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start Tomcat.
+# Description:       Start the Tomcat servlet engine.
+### END INIT INFO
+
+sudo systemctl $1 tomcat_<%= @instance_name %>
+
