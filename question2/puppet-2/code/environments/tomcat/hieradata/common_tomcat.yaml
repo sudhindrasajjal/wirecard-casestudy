@@ -1,6 +1,6 @@
 ---
-tomcat_version: "8.5.16-1"
-tomcat_custom::package_name: "tomcat8"
+tomcat_version: "9.0.21"
+tomcat_custom::package_name: "tomcat9"
 tomcat_config:
   tomcatA:
     name: 'tomcatA'
