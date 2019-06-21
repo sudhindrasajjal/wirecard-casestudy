@@ -3,7 +3,7 @@ I have pushed a docker image which contains the Jenkins server
 ### Setup
 Fetch the docker image from Docker Hub
 ```
-docker pull sudhindrasajjal/jenkins-demo:1.0
+docker pull sudhindrasajjal/jenkins-demo:1.1
 ```
 
 
