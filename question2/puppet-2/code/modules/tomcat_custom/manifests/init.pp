@@ -59,6 +59,10 @@ class tomcat_custom (
       $user  = 'tomcat8'
       $group = 'tomcat8'
     }
+    'tomcat9': {
+      $user  = 'tomcat9'
+      $group = 'tomcat9'
+    }
     default:{
       notify{'Please specify correct package name for tomcat e.g. tomcat7':}
     }
