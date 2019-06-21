@@ -13,7 +13,7 @@ pipeline{
         }
         stage('Deploy') { //Deploy the war to tomcat
             steps {
-                build job: 'project-deploy'
+                build job: 'project-deploy', parameters: [string(name: 'ip', value: "${ip}"), string(name: 'port', value: "${port}")]
             }
         }
     }
