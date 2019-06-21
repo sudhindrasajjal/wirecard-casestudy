@@ -1,4 +1,6 @@
 To use this puppet module
+
+* Install the puppetlabs-tomcat module by running `puppet module install puppetlabs-tomcat --version 3.0.0` on your puppetmaster
 * Copy the `tomcat_custom` module to the modules directory on the puppetmaster
 * Create a new environment or use the current `tomcat` environment available in `environments`
 * Add your node name in `environments/tomcat/manifests/nodes.pp`
